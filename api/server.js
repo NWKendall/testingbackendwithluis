@@ -1,3 +1,6 @@
+require("dotenv").config();
+
+
 const express = require("express");
 const helmet = require("helmet");
 const cors = require("cors");
@@ -16,7 +19,7 @@ server.use(helmet());
 server.use("/api/cohorts", cohortsRouter);
 server.use("/api/students", studentsRouter);
 
-server.get("/", (req, res) => {
+server.get("/api", (req, res) => {
   res.json({ api: "up" });
 });
 
